@@ -26,7 +26,7 @@
 
 static int bx[MAX_LEN], by[MAX_LEN];    /* file circulaire des cases du corps */
 static int head, tail, len;             /* indices dans la file, longueur */
-static int dx, dy;                      /* direction courante */
+static int dx, dy;                        /* direction courante */
 static int ax, ay;                      /* la pomme */
 static int score, tick_ms, alive = 1;
 static const char *script;
