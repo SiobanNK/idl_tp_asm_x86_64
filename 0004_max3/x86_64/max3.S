@@ -11,5 +11,9 @@
     .text
     .globl C(max3)
 C(max3):
-    # TODO
+    mov     %rdi, %rax  # res := x
+    cmp     %rax, %rsi  # x - rax
+    cmovg   %rsi, %rax  # If x - rax > 0, res (x) becomes edx (y)
+    cmp     %rax, %rdx  # z - max(x,y)
+    cmovg   %rdx, %rax
     ret

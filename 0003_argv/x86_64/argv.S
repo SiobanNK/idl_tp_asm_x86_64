@@ -18,12 +18,12 @@ C(main):
     push    %r12                    # (2 push: la pile reste alignée)
     mov     %edi, %ebx              # ebx = argc
     mov     %rsi, %r12              # r12 = argv
-1:
+1:  # int ou chaine de caractere
     mov     (%r12), %rdi            # argv[i]
     call    C(puts)
     add     $8, %r12                # argv++
     dec     %ebx
-    jnz     1b
+    jnz     1b                      # b pour dire dans quel sens on utilise l'étiquette : b pour backward (1 au-dessus de la ligne), f pour forward
     xor     %eax, %eax
     pop     %r12
     pop     %rbx
